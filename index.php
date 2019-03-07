@@ -25,13 +25,13 @@
                     var users;
                     users = "<?php echo $user; ?>";
                     //consulta de usuario por id en el servidor
-                    request.open('GET', 'http://169.62.217.179:5000/users/1', true);
+                    request.open('GET', 'http:/localhost:5000/users/'+users, true);
                     request.onload = function () {
                     var data = JSON.parse(this.response);
 
                         if (request.status >= 200 && request.status < 400) {
                             console.log(data)
-                            Push.create("juan", {
+                            Push.create(data, {
                                 body: "dasd",
                                 icon: 'logo.png',
                                 timeout: 4000,
