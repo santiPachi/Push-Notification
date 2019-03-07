@@ -1,3 +1,6 @@
+<?php 
+    $user = $_GET['users'];
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +21,11 @@
                
                 function consultatUsuairio() {
                     var request = new XMLHttpRequest();
-
+                    //obtener el id de la url
+                    var users;
+                    users = <?php echo $user; ?>;
                     //consulta de usuario por id en el servidor
-                    request.open('GET', 'http://localhost:5000/users/2', true);
+                    request.open('GET', 'http://169.62.217.179:5000/users/'+user, true);
                     request.onload = function () {
                     var data = JSON.parse(this.response);
 
