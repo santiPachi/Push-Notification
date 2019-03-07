@@ -34,7 +34,7 @@ app.get("/users/:id", (req,res) => {
     }else if (userId == 2){
         nombre = "Juan"
     }
-    
+
     res.json(nombre)
 
     //res.end()

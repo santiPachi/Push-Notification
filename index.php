@@ -22,29 +22,28 @@
                     //consulta de usuario por id en el servidor
                     request.open('GET', 'http://localhost:5000/users/2', true);
                     request.onload = function () {
-
-                    
                     var data = JSON.parse(this.response);
 
-                    if (request.status >= 200 && request.status < 400) {
-                        notifyMe(data)
-                    } else {
-                        console.log('error');
-                    }
+                        if (request.status >= 200 && request.status < 400) {
+                            console.log(data)
+                            Push.create(data, {
+                                body: "dasd",
+                                icon: 'logo.png',
+                                timeout: 4000,
+                                onClick: function () {
+                                    window.focus();
+                                    this.close();
+                                }
+                            });
+                        } else {
+                            console.log('error');
+                        }
                     }
 
                     request.send();
 
                     //Crear notificacion 
-                    Push.create(data, {
-                        body: "How's it hangin'?",
-                        icon: 'logo.png',
-                        timeout: 4000,
-                        onClick: function () {
-                            window.focus();
-                            this.close();
-                        }
-                    });
+                    
                     
 
                 }
@@ -52,3 +51,4 @@
         </script>
     </body>
 </html>
+
