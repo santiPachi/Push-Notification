@@ -31,7 +31,7 @@
 
                         if (request.status >= 200 && request.status < 400) {
                             console.log(data)
-                            Push.create(data, {
+                            Push.create("juan", {
                                 body: "dasd",
                                 icon: 'logo.png',
                                 timeout: 4000,
