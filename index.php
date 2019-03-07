@@ -30,26 +30,29 @@
                     var data = JSON.parse(this.response);
 
                         if (request.status >= 200 && request.status < 400) {
+                       
                             console.log(data)
-                            Push.create(data, {
-                                body: "dasd",
-                                icon: 'logo.png',
-                                timeout: 4000,
-                                onClick: function () {
-                                    window.focus();
-                                    this.close();
-                                }
-                            });
+                            
+                   
                         } else {
                             console.log('error');
                         }
+                        
                     }
-
                     request.send();
 
                     //Crear notificacion 
                     
-                    
+                     
+                    Push.create("juan", {
+                        body: "dasd",
+                        icon: 'logo.png',
+                        timeout: 4000,
+                        onClick: function () {
+                            window.focus();
+                            this.close();
+                        }
+                    });
 
                 }
                
