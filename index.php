@@ -25,7 +25,7 @@
                     var users;
                     users = "<?php echo $user; ?>";
                     //consulta de usuario por id en el servidor
-                    request.open('GET', 'http:/localhost:5000/users/'+users, true);
+                    request.open('GET', 'http://169.62.217.179:5000/users/'+users, true);
                     request.onload = function () {
                     var data = JSON.parse(this.response);
 
