@@ -23,9 +23,9 @@
                     var request = new XMLHttpRequest();
                     //obtener el id de la url
                     var users;
-                    users = <?php echo $user; ?>;
+                    users = "<?php echo $user; ?>";
                     //consulta de usuario por id en el servidor
-                    request.open('GET', 'http://169.62.217.179:5000/users/'+user, true);
+                    request.open('GET', 'http://169.62.217.179:5000/users/1', true);
                     request.onload = function () {
                     var data = JSON.parse(this.response);
 
